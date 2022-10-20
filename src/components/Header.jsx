@@ -1,9 +1,66 @@
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  let allLinks = (
+    <>
+      <li className="hover:text-base-100">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-base-100 " : undefined
+          }
+          end
+        >
+          Home
+        </NavLink>
+      </li>
+      <li className="hover:text-base-100">
+        <NavLink
+          to="/rooms"
+          className={({ isActive }) =>
+            isActive ? "text-base-100 " : undefined
+          }
+        >
+          Rooms
+        </NavLink>
+      </li>
+      <li className="hover:text-base-100">
+        <NavLink
+          to="/Restaurant"
+          className={({ isActive }) =>
+            isActive ? "text-base-100 " : undefined
+          }
+        >
+          Restaurant
+        </NavLink>
+      </li>
+      <li className="hover:text-base-100">
+        <NavLink
+          to="/gallery"
+          className={({ isActive }) =>
+            isActive ? "text-base-100 " : undefined
+          }
+        >
+          Gallery
+        </NavLink>
+      </li>
+      <li className="hover:text-base-100">
+        <NavLink
+          to="/Contact"
+          className={({ isActive }) =>
+            isActive ? "text-base-100 " : undefined
+          }
+        >
+          Contact
+        </NavLink>
+      </li>
+    </>
+  );
 
   return (
     <header className="flex items-center  justify-between w-10/12 h-[100px]">
@@ -24,40 +81,12 @@ export const Header = () => {
           )}
         </div>
         <ul className="flex items-center justify-evenly w-full max-md:hidden">
-          <li>
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Rooms</a>
-          </li>
-          <li>
-            <a href="#">Restaurant</a>
-          </li>
-          <li>
-            <a href="#">Gallery</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
+          {allLinks}
         </ul>
       </nav>
       {isMenuOpen && (
         <ul className="absolute top-[100px] left-0 bg-primary flex flex-col items-center justify-evenly w-full h-80 font-bold text-xl md:hidden  ">
-          <li className="hover:text-base-100">
-            <a href="#">Home</a>
-          </li>
-          <li className="hover:text-base-100">
-            <a href="#">Rooms</a>
-          </li>
-          <li className="hover:text-base-100">
-            <a href="#">Restaurant</a>
-          </li>
-          <li className="hover:text-base-100">
-            <a href="#">Gallery</a>
-          </li>
-          <li className="hover:text-base-100">
-            <a href="#">Contact</a>
-          </li>
+          {allLinks}
         </ul>
       )}
     </header>
