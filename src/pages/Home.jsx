@@ -1,8 +1,9 @@
 import React from "react";
+import { RoomCard } from "../components/RoomCard";
 
 export const Home = () => {
   return (
-    <main className="w-full flex flex-col items-center justify-center">
+    <main className="w-full flex flex-col items-center justify-center mb-[500px]">
       <section className=" h-screen hero_section_image w-full flex flex-col items-center justify-center mt-[-100px] ">
         <h3
           className="text-4xl font-medium pb-10
@@ -43,6 +44,31 @@ export const Home = () => {
         <div className=" absolute top-0 right-0 flex max-lg:hidden">
           <div className="w-[300px] h-[450px] bg_center_utility  rounded-2xl mr-[-200px] mt-[350px] z-10 aboutSec_image_two "></div>
           <div className="w-[475px] h-[700px] bg_center_utility  rounded-2xl z-1 aboutSec_image_one"></div>
+        </div>
+      </section>
+
+      <section className="bg-secondary w-full flex flex-col items-center py-6">
+        <div className=" flex justify-between items-center w-10/12 ">
+          <div className=" w-5/6 max-md:w-full">
+            <h3 className="font-[lora] my-3  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
+              Our Best Rooms
+            </h3>
+            <p
+              className="font-normal w-3/6 text-2xl mb-6 max-md:w-full 
+            max-md:hidden max-md:text-center"
+            >
+              Here is some of our best rooms to relax for your vacation
+            </p>
+          </div>
+          <button className="btn w-[220px] h-[90px] text-xl btn-primary max-md:hidden">
+            ALL ROOMS
+          </button>
+        </div>
+
+        <div className="flex justify-between w-10/12 mb-6">
+          <RoomCard></RoomCard>
+          <RoomCard></RoomCard>
+          <RoomCard></RoomCard>
         </div>
       </section>
     </main>
