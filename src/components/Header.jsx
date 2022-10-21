@@ -63,7 +63,7 @@ export const Header = () => {
   );
 
   return (
-    <header className="flex items-center  justify-between w-10/12 h-[100px]">
+    <header className="flex items-center  justify-between w-10/12 h-[100px] z-10">
       <div className="text-5xl font-['monoton'] text-accent ">LUXINN</div>
       <nav
         id="navbar"
