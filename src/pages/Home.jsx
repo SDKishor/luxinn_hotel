@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RoomCard } from "../components/RoomCard";
+import { ShowCaseCard } from "../components/ShowCaseCard";
 
 export const Home = () => {
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
   return (
     <main className="w-full flex flex-col items-center justify-center mb-[500px]">
       <section className=" h-screen hero_section_image w-full flex flex-col items-center justify-center mt-[-100px] ">
@@ -50,7 +70,7 @@ export const Home = () => {
       <section className="bg-secondary w-full flex flex-col items-center py-6">
         <div className=" flex justify-between items-center w-10/12 ">
           <div className=" w-5/6 max-md:w-full">
-            <h3 className="font-[lora] my-3  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
+            <h3 className="uppercase  font-[lora] my-3  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
               Our Best Rooms
             </h3>
             <p
@@ -65,11 +85,27 @@ export const Home = () => {
           </button>
         </div>
 
-        <div className="flex justify-between w-10/12 mb-6">
+        <div className="flex items-center max-md:flex-col max-md:w-full justify-between w-10/12 mb-6 ">
           <RoomCard></RoomCard>
           <RoomCard></RoomCard>
           <RoomCard></RoomCard>
         </div>
+      </section>
+
+      <section className="py-6 w-10/12 max-md:w-full flex flex-col items-center">
+        <h2 className="uppercase font-[lora] my-8  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
+          Around Our hotel
+        </h2>
+
+        <div className="">
+          <ShowCaseCard />
+          <ShowCaseCard alignRign={windowSize.innerWidth > 768 && true} />
+          <ShowCaseCard />
+        </div>
+
+        <button className="btn btn-primary w-[180px] h-[80px] text-xl">
+          Gallery
+        </button>
       </section>
     </main>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 export const RoomCard = () => {
   return (
-    <div className="card w-[400px] h-[500px] bg-primary shadow-xl">
+    <div className="card w-[380px] gap-4 h-[500px] max-md:w-[350px] max-md:mb-5 bg-primary shadow-xl">
       <figure className="h-3/6 cardImageOne"></figure>
       <div className="card-body text-base-100">
         <h2 className="card-title text-3xl font-[lora]">Deluxe Room</h2>

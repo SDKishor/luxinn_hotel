@@ -52,3 +52,19 @@ code {
 .cardImagethree {
   background-image: url("../src/assets/Rectangle 17-1.png");
 }
+
+.aroundHotelPool {
+  background-image: url("../src/assets/Rectangle 19.png");
+}
+
+.aroundHotelBar {
+  background-image: url("../src/assets/Rectangle 20.png");
+}
+
+.aroundHotelGym {
+  background-image: url("../src/assets/Rectangle 22.png");
+}
+
+.vectorArrow {
+  background-image: url("../src/assets/Vector 1.svg");
+}
