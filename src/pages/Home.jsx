@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { RoomCard } from "../components/RoomCard";
 import { ShowCaseCard } from "../components/ShowCaseCard";
 
+import foodGroupImage from "../assets/Group 33.png";
+
 export const Home = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
@@ -106,6 +108,26 @@ export const Home = () => {
         <button className="btn btn-primary w-[180px] h-[80px] text-xl">
           Gallery
         </button>
+      </section>
+
+      <section className="w-full bg-secondary flex items-center justify-center my-10">
+        <div className="flex w-10/12 max-md:flex-col py-16">
+          <div className="h-auto flex-1  flex items-center justify-center">
+            <img src={foodGroupImage} alt="" />
+          </div>
+          <div className="flex-1 flex flex-col justify-center box-border max-md:text-center pt-10">
+            <h2 className="text-4xl uppercase font-bold px-14 max-md:text-2xl max-md:px-2 ">
+              find your fabourite cusine
+            </h2>
+            <p className="text-xl px-14 py-6 max-md:text-base max-md:px-2">
+              We have a 5 star restaurant with world class chef to give our
+              guest their desierd food with your fabourite cusine
+            </p>
+            <button className="btn btn-primary btn-lg mx-14 w-[250px] max-md:mx-auto">
+              Restaurant
+            </button>
+          </div>
+        </div>
       </section>
     </main>
   );
