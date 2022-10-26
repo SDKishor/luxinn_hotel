@@ -3,6 +3,8 @@ import { RoomCard } from "../components/RoomCard";
 import { ShowCaseCard } from "../components/ShowCaseCard";
 
 import foodGroupImage from "../assets/Group 33.png";
+import { Link } from "react-router-dom";
+import { ReviewCard } from "../components/ReviewCard";
 
 export const Home = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -123,9 +125,41 @@ export const Home = () => {
               We have a 5 star restaurant with world class chef to give our
               guest their desierd food with your fabourite cusine
             </p>
-            <button className="btn btn-primary btn-lg mx-14 w-[250px] max-md:mx-auto">
+            <Link
+              to={"/restaurant"}
+              className="btn btn-primary btn-lg mx-14 w-[250px] max-md:mx-auto"
+            >
               Restaurant
-            </button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-6 w-10/12 max-md:w-full flex flex-col items-center justify-center">
+        <div className="w-full max-md:flex flex-col items-center justify-center">
+          <h2 className="uppercase  font-[lora] my-3 mb-5  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold  max-md:mb-10">
+            WHat Our Guest says
+          </h2>
+
+          <div className="carousel carousel-center  space-x-4 max-md:w-[350px] ">
+            <div id="slide1" className="carousel-item ">
+              <ReviewCard />
+            </div>
+            <div id="slide1" className="carousel-item ">
+              <ReviewCard />
+            </div>
+
+            <div id="slide1" className="carousel-item ">
+              <ReviewCard />
+            </div>
+
+            <div id="slide1" className="carousel-item ">
+              <ReviewCard />
+            </div>
+
+            <div id="slide1" className="carousel-item ">
+              <ReviewCard />
+            </div>
           </div>
         </div>
       </section>
