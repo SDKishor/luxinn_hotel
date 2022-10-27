@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { ContactPage } from "./pages/ContactPage";
+import { AboutPage } from "./pages/AboutPage";
 import { GalleryPage } from "./pages/GalleryPage";
 import { Home } from "./pages/Home";
 import { RestaurantPage } from "./pages/RestaurantPage";
@@ -16,8 +17,9 @@ function App() {
         <Route path="/rooms" element={<RoomsPage></RoomsPage>} />
         <Route path="/restaurant" element={<RestaurantPage></RestaurantPage>} />
         <Route path="/gallery" element={<GalleryPage></GalleryPage>} />
-        <Route path="/Contact" element={<ContactPage></ContactPage>} />
+        <Route path="/about" element={<AboutPage></AboutPage>} />
       </Routes>
+      <Footer></Footer>
     </div>
   );
 }

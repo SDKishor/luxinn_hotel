@@ -27,7 +27,7 @@ export const Home = () => {
   }
 
   return (
-    <main className="w-full flex flex-col items-center justify-center mb-[500px]">
+    <main className="w-full flex flex-col items-center justify-center ">
       <section className=" h-screen hero_section_image w-full flex flex-col items-center justify-center mt-[-100px] ">
         <h3
           className="text-4xl font-medium pb-10
@@ -46,7 +46,7 @@ export const Home = () => {
       </section>
 
       <section
-        className="w-10/12 md:h-[800px] my-16 max-md:w-full  relative
+        className="w-10/12 max-w-[1600px] md:h-[800px] my-16 max-md:w-full  relative
         "
       >
         <h2 className="font-[lora] my-12 max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold max-md:mt-0 ">
@@ -60,9 +60,12 @@ export const Home = () => {
             There is many activities that the hotel provide for all the visitors
             with delecious food and fun activities.
           </p>
-          <button className="uppercase bg-base-100 py-4 px-8 rounded-md font-bold text-xl text-neutral cursor-pointer md:w-[200px] ">
+          <Link
+            to={"/about"}
+            className="uppercase btn btn-lg btn-secondary bg-base-100 px-8 rounded-md font-bold text-xl text-neutral md:w-[200px] "
+          >
             Read More
-          </button>
+          </Link>
         </div>
 
         <div className=" absolute top-0 right-0 flex max-lg:hidden">
@@ -72,7 +75,7 @@ export const Home = () => {
       </section>
 
       <section className="bg-secondary w-full flex flex-col items-center py-6">
-        <div className=" flex justify-between items-center w-10/12 ">
+        <div className=" flex justify-between items-center w-10/12 max-w-[1600px] ">
           <div className=" w-5/6 max-md:w-full">
             <h3 className="uppercase  font-[lora] my-3  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
               Our Best Rooms
@@ -84,19 +87,22 @@ export const Home = () => {
               Here is some of our best rooms to relax for your vacation
             </p>
           </div>
-          <button className="btn w-[220px] h-[90px] text-xl btn-primary max-md:hidden">
+          <Link
+            to={"/rooms"}
+            className="btn w-[200px] h-[80px] text-xl btn-primary max-md:hidden"
+          >
             ALL ROOMS
-          </button>
+          </Link>
         </div>
 
-        <div className="flex items-center max-md:flex-col max-md:w-full justify-between w-10/12 mb-6 ">
+        <div className="flex items-center max-md:flex-col max-md:w-full justify-between w-10/12 max-w-[1600px] mb-6 ">
           <RoomCard></RoomCard>
           <RoomCard></RoomCard>
           <RoomCard></RoomCard>
         </div>
       </section>
 
-      <section className="py-6 w-10/12 max-md:w-full flex flex-col items-center">
+      <section className="py-6 w-10/12 max-w-[1600px] max-md:w-full flex flex-col items-center">
         <h2 className="uppercase font-[lora] my-8  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
           Around Our hotel
         </h2>
@@ -107,13 +113,16 @@ export const Home = () => {
           <ShowCaseCard />
         </div>
 
-        <button className="btn btn-primary w-[180px] h-[80px] text-xl">
+        <Link
+          to={"/gallery"}
+          className="btn btn-primary w-[180px] h-[80px] text-xl"
+        >
           Gallery
-        </button>
+        </Link>
       </section>
 
       <section className="w-full bg-secondary flex items-center justify-center my-10">
-        <div className="flex w-10/12 max-md:flex-col py-16">
+        <div className="flex w-10/12 max-w-[1600px] max-md:flex-col py-16">
           <div className="h-auto flex-1  flex items-center justify-center">
             <img src={foodGroupImage} alt="" />
           </div>
@@ -135,13 +144,16 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="pb-6 w-10/12 max-md:w-full flex flex-col items-center justify-center">
+      <section className="pb-6 w-10/12 max-w-[1600px] max-md:w-full flex flex-col items-center justify-center ">
         <div className="w-full max-md:flex flex-col items-center justify-center">
           <h2 className="uppercase  font-[lora] my-3 mb-5  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold  max-md:mb-10">
             WHat Our Guest says
           </h2>
 
-          <div className="carousel carousel-center  space-x-4 max-md:w-[350px] ">
+          <div
+            id="carouselBody"
+            className="carousel carousel-center  space-x-4 max-md:w-[350px] "
+          >
             <div id="slide1" className="carousel-item ">
               <ReviewCard />
             </div>

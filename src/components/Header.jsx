@@ -51,19 +51,19 @@ export const Header = () => {
       </li>
       <li className="hover:text-base-100">
         <NavLink
-          to="/Contact"
+          to="/about"
           className={({ isActive }) =>
             isActive ? "text-base-100 " : undefined
           }
         >
-          Contact
+          About
         </NavLink>
       </li>
     </>
   );
 
   return (
-    <header className="flex items-center  justify-between w-10/12 h-[100px] z-10">
+    <header className="flex items-center  justify-between w-10/12 h-[100px] z-10 max-w-[1600px]">
       <div className="text-5xl font-['monoton'] text-accent ">LUXINN</div>
       <nav
         id="navbar"
