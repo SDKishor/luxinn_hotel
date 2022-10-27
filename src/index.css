@@ -81,3 +81,11 @@ code {
 .foodGroupImage {
   background-image: url("../src/assets/Group\ 33.png");
 }
+
+.image[data-status="inactive"] {
+  display: none;
+}
+
+.image[data-status="active"] {
+  display: block;
+}
