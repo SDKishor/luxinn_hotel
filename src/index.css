@@ -37,6 +37,23 @@ code {
   );
 }
 
+.restaurant_gradient_overlay {
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 255, 255, 0),
+    rgba(5, 18, 31, 0.302) 100%
+  );
+}
+
+.TodaySpecial_gradient_overlay {
+  background: linear-gradient(
+    to top,
+    rgb(255, 255, 255, 0),
+    rgba(5, 18, 31, 0.5) 30%,
+    rgba(5, 18, 31) 100%
+  );
+}
+
 .bg_center_utility {
   background-repeat: no-repeat;
   background-position: center;
