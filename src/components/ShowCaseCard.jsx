@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ShowCaseCard = ({ alignRign = false }) => {
+export const ShowCaseCard = ({ alignRign = false, lastItem = false }) => {
   return (
     <div className="flex my-12 max-md:flex-col max-md:my-0">
       <div
@@ -15,10 +15,12 @@ export const ShowCaseCard = ({ alignRign = false }) => {
           We have a beautiful large pool for our guest to spand a relaxing
           moment.
         </p>
-        <div
-          className="w-[108px] h-[100px] vectorArrow bg_center_utility absolute bottom-[-15px] right-5  max-md:w-[54px] max-md:h-[54px] max-md:bottom-1 md:scale-x-[-1]
+        {!lastItem && (
+          <div
+            className="w-[108px] h-[100px] vectorArrow bg_center_utility absolute bottom-[-15px] right-5  max-md:w-[54px] max-md:h-[54px] max-md:bottom-1 md:scale-x-[-1]
         "
-        ></div>
+          ></div>
+        )}
       </div>
 
       <div className="w-2/4 flex items-center max-md:flex-col max-md:w-full">
@@ -37,7 +39,9 @@ export const ShowCaseCard = ({ alignRign = false }) => {
           moment.
         </p>
 
-        <div className="w-[108px] h-[100px] vectorArrow bg_center_utility absolute bottom-[-15px] left-5 max-md:w-[108px] max-md:h-[100px] max-md:bottom-0 max-md:right-10 max-md:left-auto max-md:opacity-30"></div>
+        {!lastItem && (
+          <div className="w-[108px] h-[100px] vectorArrow bg_center_utility absolute bottom-[-15px] left-5 max-md:w-[108px] max-md:h-[100px] max-md:bottom-0 max-md:right-10 max-md:left-auto max-md:opacity-30"></div>
+        )}
       </div>
     </div>
   );

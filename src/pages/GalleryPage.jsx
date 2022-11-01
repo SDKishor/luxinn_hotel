@@ -32,6 +32,8 @@ export const GalleryPage = () => {
           <ShowCaseCard />
           <ShowCaseCard alignRign={windowSize.innerWidth > 768 && true} />
           <ShowCaseCard />
+          <ShowCaseCard alignRign={windowSize.innerWidth > 768 && true} />
+          <ShowCaseCard lastItem={true} />
         </div>
       </section>
     </main>

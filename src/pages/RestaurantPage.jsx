@@ -13,6 +13,8 @@ import Image10 from "../assets/Food 10.png";
 import { TodaySpacialCard } from "../components/TodaySpacialCard";
 
 import tdsImage from "../assets/TodaySpecial 2.png";
+import { CusineCard } from "../components/CusineCard";
+import cusineImage1 from "../assets/cusine 1.png";
 
 export const RestaurantPage = () => {
   const [foodHour, setFoodHour] = useState("breakfast");
@@ -206,6 +208,22 @@ export const RestaurantPage = () => {
               bgImage={tdsImage}
               foodName="white Ice cream on brown cookies"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16 flex justify-center">
+        <div className="w-10/12">
+          <h2 className="uppercase  font-[lora] mb-10  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
+            Guest Choices
+          </h2>
+
+          <div className=" grid grid-cols-4 max-md:grid-cols-2 gap-5 place-items-center">
+            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
+            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
+            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
+            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
+            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
           </div>
         </div>
       </section>
