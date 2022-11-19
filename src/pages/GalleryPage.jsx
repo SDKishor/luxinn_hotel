@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { ShowCaseCard } from "../components/ShowCaseCard";
+import { UseHotelData } from "../hooks/UseHotelData";
+import demoImg from "../assets/Rectangle 19.png";
 
 export const GalleryPage = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
+  const [hotelData, setHotelData] = useState([]);
+  const galleryData = hotelData;
+  console.log(galleryData);
+
   useEffect(() => {
+    fetch("./dummyData.json")
+      .then((res) => res.json())
+      .then((data) => setHotelData(data.gallary));
+
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
@@ -29,11 +39,26 @@ export const GalleryPage = () => {
         </h2>
 
         <div className="">
-          <ShowCaseCard />
-          <ShowCaseCard alignRign={windowSize.innerWidth > 768 && true} />
-          <ShowCaseCard />
-          <ShowCaseCard alignRign={windowSize.innerWidth > 768 && true} />
-          <ShowCaseCard lastItem={true} />
+          {galleryData.map((data, index) =>
+            index % 2 === 0 ? (
+              <ShowCaseCard
+                key={index}
+                cardName={data.cardName}
+                cardDisc={data.cardDisc}
+                cardImg={data.photoUrl}
+                lastItem={index === galleryData.length - 1}
+              />
+            ) : (
+              <ShowCaseCard
+                key={index}
+                cardName={data.cardName}
+                cardDisc={data.cardDisc}
+                cardImg={data.photoUrl}
+                alignRign={windowSize.innerWidth > 768 && true}
+                lastItem={true}
+              />
+            )
+          )}
         </div>
       </section>
     </main>

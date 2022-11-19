@@ -5,9 +5,14 @@ import { ShowCaseCard } from "../components/ShowCaseCard";
 import foodGroupImage from "../assets/Group 33.png";
 import { Link } from "react-router-dom";
 import { ReviewCard } from "../components/ReviewCard";
+import { UseHotelData } from "../hooks/UseHotelData";
 
 export const Home = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
+
+  const [hotelData, setHotelData] = UseHotelData();
+
+  console.log(hotelData);
 
   useEffect(() => {
     function handleWindowResize() {

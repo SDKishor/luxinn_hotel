@@ -1,6 +1,12 @@
 import React from "react";
 
-export const ShowCaseCard = ({ alignRign = false, lastItem = false }) => {
+export const ShowCaseCard = ({
+  alignRign = false,
+  lastItem = false,
+  cardName,
+  cardDisc,
+  cardImg,
+}) => {
   return (
     <div className="flex my-12 max-md:flex-col max-md:my-0">
       <div
@@ -9,11 +15,10 @@ export const ShowCaseCard = ({ alignRign = false, lastItem = false }) => {
         }`}
       >
         <h2 className="text-4xl font-[lora] uppercase font-bold pb-6 max-md:text-2xl ">
-          swimming pool
+          {cardName}
         </h2>
         <p className="text-xl w-9/12 text-info max-md:w-11/12 pb-6">
-          We have a beautiful large pool for our guest to spand a relaxing
-          moment.
+          {cardDisc}
         </p>
         {!lastItem && (
           <div
@@ -24,7 +29,9 @@ export const ShowCaseCard = ({ alignRign = false, lastItem = false }) => {
       </div>
 
       <div className="w-2/4 flex items-center max-md:flex-col max-md:w-full">
-        <div className="w-[600px] h-[300px] rounded-xl max-md:w-11/12 max-md:h-[220px] max-md:my-5 aroundHotelPool "></div>
+        <div className="w-[600px] h-[300px] rounded-xl max-md:w-11/12 max-md:h-[220px] max-md:my-5 ">
+          <img className="w-full object-cover" src={cardImg} alt="" />
+        </div>
       </div>
       <div
         className={`flex flex-col justify-center px-16 max-md:px-4  relative ${
@@ -32,11 +39,10 @@ export const ShowCaseCard = ({ alignRign = false, lastItem = false }) => {
         }`}
       >
         <h2 className="text-4xl font-[lora] uppercase font-bold pb-6 max-md:text-2xl max-md:pb-2">
-          swimming pool
+          {cardName}
         </h2>
         <p className="text-xl w-9/12 text-info pb-6 max-md:w-11/12 max-md:text-base">
-          We have a beautiful large pool for our guest to spand a relaxing
-          moment.
+          {cardDisc}
         </p>
 
         {!lastItem && (
