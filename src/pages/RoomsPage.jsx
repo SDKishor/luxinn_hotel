@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { RoomCard } from "../components/RoomCard";
 
 export const RoomsPage = () => {
+  const [allroomsData, setAllroomsData] = useState([]);
+  const [ourBestRoomsData, setOurBestRoomsData] = useState([]);
+
+  useEffect(() => {
+    fetch("./dummyData.json")
+      .then((res) => res.json())
+      .then(
+        (data) => (
+          setAllroomsData(data.rooms.allRooms),
+          setOurBestRoomsData(data.rooms.ourBestRoom)
+        )
+      );
+  }, []);
+
   return (
     <main className="w-full flex flex-col items-center justify-center ">
       <section className="bg-secondary w-full flex flex-col items-center py-6">
@@ -20,9 +34,17 @@ export const RoomsPage = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-3 place-items-center max-md:grid-cols-1 max-lg:grid-cols-2 max-md:w-full justify-between w-10/12 max-w-[1600px] mb-6 ">
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
+          {ourBestRoomsData.map((data, index) => (
+            <RoomCard
+              key={index}
+              name={data.name}
+              price={data.Price}
+              photoUrl={data.photoUrl}
+              roomCapacity={data.roomCapacity}
+              roomDisc={data.roomDisc}
+              roomSize={data.roomSize}
+            />
+          ))}
         </div>
       </section>
 
@@ -36,14 +58,17 @@ export const RoomsPage = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-5 place-items-center max-md:flex-col max-md:w-full justify-between w-10/12 max-w-[1600px] mb-6 ">
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
+          {allroomsData.map((data, index) => (
+            <RoomCard
+              key={index}
+              name={data.name}
+              price={data.Price}
+              photoUrl={data.photoUrl}
+              roomCapacity={data.roomCapacity}
+              roomDisc={data.roomDisc}
+              roomSize={data.roomSize}
+            />
+          ))}
         </div>
       </section>
     </main>

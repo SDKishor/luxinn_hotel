@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Image1 from "../assets/Food 1.png";
 import Image2 from "../assets/Food 2.png";
@@ -12,12 +12,13 @@ import Image9 from "../assets/Food 9.png";
 import Image10 from "../assets/Food 10.png";
 import { TodaySpacialCard } from "../components/TodaySpacialCard";
 
-import tdsImage from "../assets/TodaySpecial 2.png";
 import { CusineCard } from "../components/CusineCard";
-import cusineImage1 from "../assets/cusine 1.png";
 
 export const RestaurantPage = () => {
   const [foodHour, setFoodHour] = useState("breakfast");
+  const [todaySpacialData, setTodaySpacialData] = useState([]);
+  const [guestChoiceData, setGuestChoiceData] = useState([]);
+  const [cusineData, setCusineData] = useState([]);
 
   const images = document.getElementsByClassName("image");
 
@@ -50,6 +51,20 @@ export const RestaurantPage = () => {
       globalIndex++;
     }
   };
+
+  useEffect(() => {
+    fetch("./dummyData.json")
+      .then((res) => res.json())
+      .then(
+        (data) => (
+          setTodaySpacialData(data.restaurent.todaySpacial),
+          setGuestChoiceData(data.restaurent.guestChoice[foodHour]),
+          setCusineData(data.restaurent.cusine)
+        )
+      );
+
+    return () => {};
+  }, [foodHour]);
 
   return (
     <main className="w-full ">
@@ -139,18 +154,15 @@ export const RestaurantPage = () => {
             Today's Spacial
           </h2>
           <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1 place-items-center">
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
+            {todaySpacialData.map((data, index) => {
+              return (
+                <TodaySpacialCard
+                  key={index}
+                  bgImage={data.photoUrl}
+                  foodName={data.dishName}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
@@ -188,26 +200,13 @@ export const RestaurantPage = () => {
           </div>
 
           <div className="grid grid-cols-3 gap-5 max-md:grid-cols-1 place-items-center">
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
-            <TodaySpacialCard
-              bgImage={tdsImage}
-              foodName="white Ice cream on brown cookies"
-            />
+            {guestChoiceData.map((data, index) => (
+              <TodaySpacialCard
+                key={index}
+                bgImage={data.photoUrl}
+                foodName={data.dishName}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -215,15 +214,19 @@ export const RestaurantPage = () => {
       <section className="mt-16 flex justify-center">
         <div className="w-10/12">
           <h2 className="uppercase  font-[lora] mb-10  max-md:text-center max-md:font-bold max-md:text-xl text-4xl font-bold ">
-            Guest Choices
+            Available Cusine
           </h2>
 
           <div className=" grid grid-cols-4 max-md:grid-cols-2 gap-5 place-items-center">
-            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
-            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
-            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
-            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
-            <CusineCard cusineImage={cusineImage1} cusineName="JAPANESE" />
+            {cusineData.map((data, index) => {
+              return (
+                <CusineCard
+                  key={index}
+                  cusineImage={data.photoUrl}
+                  cusineName={data.name}
+                />
+              );
+            })}
           </div>
         </div>
       </section>

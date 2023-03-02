@@ -3,40 +3,281 @@
         {
             "cardName": "SWIMMING POOL",
             "cardDisc": "We have a beautiful large pool for our guest to spand a relaxing moment.",
-            "photoUrl": "../assets/Rectangle 19.png"
+            "photoUrl": "./assets/Rectangle 19.png"
         },
         {
-            "name": "Hill",
-            "gender": "male",
-            "photoUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+            "cardName": "Stay Healthy",
+            "cardDisc": "We have a  large gym for our guest who loves to workout daily also have some trainer to help you",
+            "photoUrl": "./assets/Rectangle 20.png"
+        },
+        {
+            "cardName": "Spa room",
+            "cardDisc": "We have a beautiful relaxing spa and massage room for our guest to spand a relaxing moment.",
+            "photoUrl": "./assets/Rectangle 21.png"
+        },
+        {
+            "cardName": "Bar ",
+            "cardDisc": "We have a beautiful bar to spand your evening with some refreashing drinks.",
+            "photoUrl": "./assets/Rectangle 22.png"
+        },
+        {
+            "cardName": "5 star restaurant",
+            "cardDisc": "We have a 5 star restaurant with world class chef to give our guest their desierd food",
+            "photoUrl": "./assets/Rectangle 23.png"
         }
     ],
 
     
 
-    "restaurent": [
+    "restaurent": 
         {
-            "name": "Hill",
-    "gender": "male",
-    "photoUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+            "todaySpacial": [
+                {
+                    "dishName":"Steam salmon with souce",
+                    "photoUrl": "./assets/TodaySpecial 1.png"
+                },{
+                    "dishName":"White Ice Cream On Brown Cookies",
+                    "photoUrl": "./assets/TodaySpecial 2.png"
+                },{
+                    "dishName":"Spaghetti and meatballs",
+                    "photoUrl": "./assets/TodaySpecial 3.png"
+                }
+            ],
+            "guestChoice":{
+                "breakfast": [
+                    {
+                        "dishName":"Steam salmon with souce",
+                        "photoUrl": "./assets/TodaySpecial 1.png"
+                    },
+                    {
+                        "dishName":"Steam salmon with souce",
+                        "photoUrl": "./assets/TodaySpecial 1.png"
+                    },
+                    {
+                        "dishName":"Steam salmon with souce",
+                        "photoUrl": "./assets/TodaySpecial 1.png"
+                    },
+                    {
+                        "dishName":"Steam salmon with souce",
+                        "photoUrl": "./assets/TodaySpecial 1.png"
+                    },
+                    {
+                        "dishName":"Steam salmon with souce",
+                        "photoUrl": "./assets/TodaySpecial 1.png"
+                    }
+                ],
+
+                "lunch": [
+                {
+                    "dishName":"White Ice Cream On Brown Cookies",
+                    "photoUrl": "./assets/TodaySpecial 2.png"
+                },
+                {
+                    "dishName":"White Ice Cream On Brown Cookies",
+                    "photoUrl": "./assets/TodaySpecial 2.png"
+                },
+                {
+                    "dishName":"White Ice Cream On Brown Cookies",
+                    "photoUrl": "./assets/TodaySpecial 2.png"
+                },
+                {
+                    "dishName":"White Ice Cream On Brown Cookies",
+                    "photoUrl": "./assets/TodaySpecial 2.png"
+                },
+                {
+                    "dishName":"White Ice Cream On Brown Cookies",
+                    "photoUrl": "./assets/TodaySpecial 2.png"
+                }
+                ],
+
+                "dinner": [
+                
+                    {
+                    "dishName":"Spaghetti and meatballs",
+                    "photoUrl": "./assets/TodaySpecial 3.png"
+                },
+                {
+                    "dishName":"Spaghetti and meatballs",
+                    "photoUrl": "./assets/TodaySpecial 3.png"
+                },{
+                    "dishName":"Spaghetti and meatballs",
+                    "photoUrl": "./assets/TodaySpecial 3.png"
+                },{
+                    "dishName":"Spaghetti and meatballs",
+                    "photoUrl": "./assets/TodaySpecial 3.png"
+                },{
+                    "dishName":"Spaghetti and meatballs",
+                    "photoUrl": "./assets/TodaySpecial 3.png"
+                }
+                ]
+            },
+            "cusine": [
+                {
+                    "name":"Mexican",
+                    "photoUrl": "./assets/cusine 1.png"
+                },{
+                    "name":"Indian",
+                    "photoUrl": "./assets/cusine 2.png"
+                },{
+                    "name":"Japanese",
+                    "photoUrl": "./assets/cusine 3.png"
+                },{
+                    "name":"American",
+                    "photoUrl": "./assets/cusine 4.png"
+                },{
+                    "name":"Italian",
+                    "photoUrl": "./assets/cusine 5.png"
+                }
+            ]
+        }
+    
+,
+    "rooms": {
+        "ourBestRoom":[
+        {
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImageOne"
         },
         {
-            "name": "Hill",
-    "gender": "male",
-    "photoUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "400",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        },
+        {
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "300",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagethree"
+        }
+        ],
+        "allRooms": [
+            {
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        },{
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        },{
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        },{
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        },{
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        }
+        ]
+        
+    
+    }
+,
+    "aroundTheHotel": [
+        {
+            "cardName": "SWIMMING POOL",
+            "cardDisc": "We have a beautiful large pool for our guest to spand a relaxing moment.",
+            "photoUrl": "./assets/Rectangle 19.png"
+        },
+        {
+            "cardName": "Stay Healthy",
+            "cardDisc": "We have a  large gym for our guest who loves to workout daily also have some trainer to help you",
+            "photoUrl": "./assets/Rectangle 20.png"
+        },
+        {
+            "cardName": "Spa room",
+            "cardDisc": "We have a beautiful relaxing spa and massage room for our guest to spand a relaxing moment.",
+            "photoUrl": "./assets/Rectangle 21.png"
         }
     ]
 ,
-    "rooms": [
+    "HomeOurBestRooms":[
         {
-            "name": "Hill",
-    "gender": "male",
-    "photoUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImageOne"
         },
         {
-            "name": "Hill",
-    "gender": "male",
-    "photoUrl": "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2080&q=80"
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagetwo"
+        },
+        {
+            "name": "Deluxe Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "200",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagethree"
         }
     ]
+,
+    "guestReviews":[
+        {
+            "name": "ALAX JHON",
+            "country": "Amarica",
+            "heading": "Best Hotel",
+            "comment": "We have a 5 star restaurant with world class chef to give our guest their desierd food with your fabourite cusin0",
+            "userPhotoUrl": "./assets/Ellipse 1-5.png"
+        },{
+            "name": "Ama",
+            "country": "Amarica",
+            "heading": "Best Hotel",
+            "comment": "We have a 5 star restaurant with world class chef to give our guest their desierd food with your fabourite cusin0",
+            "userPhotoUrl":"./assets/Ellipse 1-2.png"
+        },{
+            "name": "Apon",
+            "country": "Amarica",
+            "heading": "Best Hotel",
+            "comment": "We have a 5 star restaurant with world class chef to give our guest their desierd food with your fabourite cusin0",
+            "userPhotoUrl": "./assets/Ellipse 1-3.png"
+        },{
+            "name": "ALAX JHON",
+            "country": "Amarica",
+            "heading": "Best Hotel",
+            "comment": "We have a 5 star restaurant with world class chef to give our guest their desierd food with your fabourite cusin0",
+            "userPhotoUrl": "./assets/Ellipse 1-4.png"
+        },{
+            "name": "ALAX JHON",
+            "country": "Amarica",
+            "heading": "Best Hotel",
+            "comment": "We have a 5 star restaurant with world class chef to give our guest their desierd food with your fabourite cusin0",
+            "userPhotoUrl": "./assets/Ellipse 1-1.png"
+        }
+    ]
+
 }

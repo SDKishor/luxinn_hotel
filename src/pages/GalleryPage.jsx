@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { ShowCaseCard } from "../components/ShowCaseCard";
-import { UseHotelData } from "../hooks/UseHotelData";
-import demoImg from "../assets/Rectangle 19.png";
 
 export const GalleryPage = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
   const [hotelData, setHotelData] = useState([]);
   const galleryData = hotelData;
-  console.log(galleryData);
 
   useEffect(() => {
     fetch("./dummyData.json")
@@ -55,7 +52,7 @@ export const GalleryPage = () => {
                 cardDisc={data.cardDisc}
                 cardImg={data.photoUrl}
                 alignRign={windowSize.innerWidth > 768 && true}
-                lastItem={true}
+                lastItem={index === galleryData.length - 1}
               />
             )
           )}

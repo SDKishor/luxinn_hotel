@@ -1,6 +1,4 @@
 import React from "react";
-import aboutImg1 from "../assets/about1.png";
-import aboutImg2 from "../assets/about2.png";
 
 export const AboutPage = () => {
   return (
@@ -20,7 +18,7 @@ export const AboutPage = () => {
             </p>
           </div>
           <div className="w-1/2 flex items-center justify-center">
-            <img src={aboutImg1} alt="" />
+            <img src="./assets/about1.png" alt="" />
           </div>
         </div>
       </section>
@@ -52,7 +50,7 @@ export const AboutPage = () => {
             </p>
           </div>
           <div className="w-1/2 flex items-center justify-center">
-            <img src={aboutImg2} alt="" className="object-cover " />
+            <img src="./assets/about2.png" alt="" className="object-cover " />
           </div>
         </div>
       </section>

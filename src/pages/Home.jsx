@@ -5,16 +5,25 @@ import { ShowCaseCard } from "../components/ShowCaseCard";
 import foodGroupImage from "../assets/Group 33.png";
 import { Link } from "react-router-dom";
 import { ReviewCard } from "../components/ReviewCard";
-import { UseHotelData } from "../hooks/UseHotelData";
 
 export const Home = () => {
   const [windowSize, setWindowSize] = useState(getWindowSize());
 
-  const [hotelData, setHotelData] = UseHotelData();
-
-  console.log(hotelData);
+  const [aroundTheHotelData, setAroundTheHotelData] = useState([]);
+  const [bestRooms, setBestRooms] = useState([]);
+  const [userReviewData, setUserReviewData] = useState([]);
 
   useEffect(() => {
+    fetch("./dummyData.json")
+      .then((res) => res.json())
+      .then(
+        (data) => (
+          setAroundTheHotelData(data.aroundTheHotel),
+          setBestRooms(data.HomeOurBestRooms),
+          setUserReviewData(data.guestReviews)
+        )
+      );
+
     function handleWindowResize() {
       setWindowSize(getWindowSize());
     }
@@ -101,9 +110,17 @@ export const Home = () => {
         </div>
 
         <div className="flex items-center max-md:flex-col max-md:w-full justify-between w-10/12 max-w-[1600px] mb-6 ">
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
-          <RoomCard></RoomCard>
+          {bestRooms.map((data, index) => (
+            <RoomCard
+              key={index}
+              name={data.name}
+              price={data.Price}
+              photoUrl={data.photoUrl}
+              roomCapacity={data.roomCapacity}
+              roomDisc={data.roomDisc}
+              roomSize={data.roomSize}
+            />
+          ))}
         </div>
       </section>
 
@@ -113,9 +130,26 @@ export const Home = () => {
         </h2>
 
         <div className="">
-          <ShowCaseCard />
-          <ShowCaseCard alignRign={windowSize.innerWidth > 768 && true} />
-          <ShowCaseCard />
+          {aroundTheHotelData.map((data, index) =>
+            index % 2 === 0 ? (
+              <ShowCaseCard
+                key={index}
+                cardName={data.cardName}
+                cardDisc={data.cardDisc}
+                cardImg={data.photoUrl}
+                lastItem={index === aroundTheHotelData.length - 1}
+              />
+            ) : (
+              <ShowCaseCard
+                key={index}
+                cardName={data.cardName}
+                cardDisc={data.cardDisc}
+                cardImg={data.photoUrl}
+                alignRign={windowSize.innerWidth > 768 && true}
+                lastItem={index === aroundTheHotelData.length - 1}
+              />
+            )
+          )}
         </div>
 
         <Link
@@ -159,24 +193,17 @@ export const Home = () => {
             id="carouselBody"
             className="carousel carousel-center  space-x-4 max-md:w-[350px] "
           >
-            <div id="slide1" className="carousel-item ">
-              <ReviewCard />
-            </div>
-            <div id="slide1" className="carousel-item ">
-              <ReviewCard />
-            </div>
-
-            <div id="slide1" className="carousel-item ">
-              <ReviewCard />
-            </div>
-
-            <div id="slide1" className="carousel-item ">
-              <ReviewCard />
-            </div>
-
-            <div id="slide1" className="carousel-item ">
-              <ReviewCard />
-            </div>
+            {userReviewData.map((data, index) => (
+              <div key={index} id="slide1" className="carousel-item ">
+                <ReviewCard
+                  name={data.name}
+                  heading={data.heading}
+                  country={data.country}
+                  comment={data.comment}
+                  userPhotoUrl={data.userPhotoUrl}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
