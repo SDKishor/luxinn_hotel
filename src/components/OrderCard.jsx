@@ -31,10 +31,7 @@ export const OrderCard = ({ lastItem = false }) => {
           <button className="h-10 w-10 text-2xl mx-1 border-solid border-2 border-primary">
             -
           </button>
-          <button
-            disabled
-            className="h-10 w-10 text-2xl mx-1 border-solid border-2 border-primary"
-          >
+          <button disabled className="h-10 w-10 text-2xl mx-1 ">
             1
           </button>
           <button className="h-10 w-10 text-2xl mx-1 border-solid border-2 border-primary">
