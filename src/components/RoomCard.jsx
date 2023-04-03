@@ -10,10 +10,8 @@ export const RoomCard = ({
   roomCapacity,
   roomDisc,
   roomSize,
+  roomData,
 }) => {
-  const handleBooking = () => {
-    console.log("hi");
-  };
   return (
     <div className="card w-[380px] gap-4 h-[500px] max-md:w-[350px] max-md:mb-5 bg-primary shadow-xl">
       <figure className={"h-3/5 relative " + photoUrl}>
@@ -38,13 +36,8 @@ export const RoomCard = ({
             <span className="font-bold text-3xl text-neutral">${price} </span>
             per night
           </h3>
-          <Link to="/order">
-            <button
-              className="btn btn-md btn-secondary hover:border-neutral"
-              onClick={() =>
-                handleBooking(name, price, photoUrl, roomCapacity, roomSize)
-              }
-            >
+          <Link to="/order" state={roomData}>
+            <button className="btn btn-md btn-secondary hover:border-neutral">
               Book Now
             </button>
           </Link>

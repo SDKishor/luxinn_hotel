@@ -160,40 +160,45 @@
         ],
         "allRooms": [
             {
-            "name": "Deluxe Room",
+            "id":1,
+                "name": "Deluxe Room",
             "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
-            "Price": "200",
+            "Price": "500",
             "roomSize": "50",
             "roomCapacity": "2",
             "photoUrl": "cardImagetwo"
         },{
+           "id":2,
+            "name": "Royle Class Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "300",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImagethree"
+        },{
+           "id":3,
+            "name": "Twin Room",
+            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
+            "Price": "270",
+            "roomSize": "50",
+            "roomCapacity": "2",
+            "photoUrl": "cardImageOne"
+        },{
+           "id":4,
             "name": "Deluxe Room",
             "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
-            "Price": "200",
+            "Price": "250",
             "roomSize": "50",
             "roomCapacity": "2",
             "photoUrl": "cardImagetwo"
         },{
+           "id":5,
             "name": "Deluxe Room",
             "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
             "Price": "200",
             "roomSize": "50",
             "roomCapacity": "2",
-            "photoUrl": "cardImagetwo"
-        },{
-            "name": "Deluxe Room",
-            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
-            "Price": "200",
-            "roomSize": "50",
-            "roomCapacity": "2",
-            "photoUrl": "cardImagetwo"
-        },{
-            "name": "Deluxe Room",
-            "roomDisc": "A room for two adults with free brackfast buffet. 10% discount on the uses of extra facilitices.",
-            "Price": "200",
-            "roomSize": "50",
-            "roomCapacity": "2",
-            "photoUrl": "cardImagetwo"
+            "photoUrl": "cardImageOne"
         }
         ]
         

@@ -43,6 +43,7 @@ export const RoomsPage = () => {
               roomCapacity={data.roomCapacity}
               roomDisc={data.roomDisc}
               roomSize={data.roomSize}
+              roomData={data}
             />
           ))}
         </div>
@@ -67,6 +68,7 @@ export const RoomsPage = () => {
               roomCapacity={data.roomCapacity}
               roomDisc={data.roomDisc}
               roomSize={data.roomSize}
+              roomData={data}
             />
           ))}
         </div>

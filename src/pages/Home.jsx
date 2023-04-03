@@ -119,6 +119,7 @@ export const Home = () => {
               roomCapacity={data.roomCapacity}
               roomDisc={data.roomDisc}
               roomSize={data.roomSize}
+              roomData={data}
             />
           ))}
         </div>
