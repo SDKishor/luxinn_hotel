@@ -12,12 +12,23 @@ import { AdminPage } from "./admin/AdminPage";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import { LoginPage } from "./pages/LoginPage";
+import { Admin_Dashboard } from "./admin/Admin_Dashboard";
+import { Admin_Hotels } from "./admin/Admin_Hotels";
+import { Admin_Restaurant } from "./admin/Admin_Restaurant";
+import { Admin_Wellcome } from "./admin/Admin_Wellcome";
+import { Admin_Userslist } from "./admin/Admin_Userslist";
+import { Admin_Stats } from "./admin/Admin_Stats";
+import { Admin_Notifications } from "./admin/Admin_Notifications";
+import { Admin_SystemHealth } from "./admin/Admin_SystemHealth";
+import { Admin_Logs } from "./admin/Admin_Logs";
+import { Admin_Setting } from "./admin/Admin_Setting";
+import { Admin_Profile } from "./admin/Admin_Profile";
 
 function App() {
   const onAdminPage = useLocation().pathname.split("/")[1] === "admin";
 
   const { user } = useContext(AuthContext);
-  console.log(user);
+
   const ProtectiveRoute = ({ children }) => {
     if (!user) {
       return <Navigate to={"/login"} />;
@@ -44,7 +55,22 @@ function App() {
               <AdminPage />
             </ProtectiveRoute>
           }
-        />
+        >
+          <Route index element={<Admin_Wellcome />} />
+          <Route path="/admin/dashboard" element={<Admin_Dashboard />} />
+          <Route path="/admin/userslist" element={<Admin_Userslist />} />
+          <Route path="/admin/hotels" element={<Admin_Hotels />} />
+          <Route path="/admin/restaurant" element={<Admin_Restaurant />} />
+          <Route path="/admin/stats" element={<Admin_Stats />} />
+          <Route
+            path="/admin/notifications"
+            element={<Admin_Notifications />}
+          />
+          <Route path="/admin/systemhealth" element={<Admin_SystemHealth />} />
+          <Route path="/admin/logs" element={<Admin_Logs />} />
+          <Route path="/admin/setting" element={<Admin_Setting />} />
+          <Route path="/admin/profile" element={<Admin_Profile />} />
+        </Route>
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       {!onAdminPage && <Footer></Footer>}

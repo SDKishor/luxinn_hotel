@@ -1,0 +1,32 @@
+#sidebar ul {
+  margin: 20px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: medium;
+  margin-block: 10px;
+}
+
+#sidebar ul a {
+  display: flex;
+  align-items: center;
+  margin-block: 16px;
+  cursor: pointer;
+  color: #aaaaaa;
+}
+#sidebar ul a.active {
+  color: #013074;
+}
+
+#sidebar ul a:hover,
+#sidebar ul button:hover {
+  color: #013074;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-inline: 10px;
+}
