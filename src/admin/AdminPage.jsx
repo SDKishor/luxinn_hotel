@@ -1,6 +1,5 @@
 import React from "react";
 import { Admin_Sidebar } from "./Admin_Sidebar";
-import { Admin_Dashboard } from "./Admin_Dashboard";
 import { Admin_Header } from "./Admin_Header";
 import { Outlet } from "react-router-dom";
 

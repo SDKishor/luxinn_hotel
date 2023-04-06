@@ -15,7 +15,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { Admin_Dashboard } from "./admin/Admin_Dashboard";
 import { Admin_Hotels } from "./admin/Admin_Hotels";
 import { Admin_Restaurant } from "./admin/Admin_Restaurant";
-import { Admin_Wellcome } from "./admin/Admin_Wellcome";
+
 import { Admin_Userslist } from "./admin/Admin_Userslist";
 import { Admin_Stats } from "./admin/Admin_Stats";
 import { Admin_Notifications } from "./admin/Admin_Notifications";
@@ -56,7 +56,7 @@ function App() {
             </ProtectiveRoute>
           }
         >
-          <Route index element={<Admin_Wellcome />} />
+          <Route index element={<Admin_Dashboard />} />
           <Route path="/admin/dashboard" element={<Admin_Dashboard />} />
           <Route path="/admin/userslist" element={<Admin_Userslist />} />
           <Route path="/admin/hotels" element={<Admin_Hotels />} />
