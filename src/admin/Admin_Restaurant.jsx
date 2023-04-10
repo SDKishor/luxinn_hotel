@@ -8,13 +8,17 @@ export const Admin_Restaurant = () => {
     "http://localhost:8800/restaurant/getallfood"
   );
 
-  const deleteItem = (id) => {
-    axios.delete(`http://localhost:8800/restaurant/deletefood/${id}`);
+  const deleteItem = async (id) => {
+    await axios.delete(`http://localhost:8800/restaurant/deletefood/${id}`);
     reFetchData();
   };
   return (
     <div className="flex-1 p-2">
-      <AdminRestaurantTable data={data} deleteItem={deleteItem} />
+      <AdminRestaurantTable
+        data={data}
+        deleteItem={deleteItem}
+        reFetchData={reFetchData}
+      />
     </div>
   );
 };

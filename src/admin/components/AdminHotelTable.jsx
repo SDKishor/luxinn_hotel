@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 import { Admin_RestaurentEditModal as Admin_RestaurentModal } from "./Admin_RestaurentEditModal";
+import { AdminHotelModal } from "./AdminHotelModal";
 
-export const AdminRestaurantTable = ({ data, deleteItem, reFetchData }) => {
+export const AdminHotelTable = ({ data, deleteItem, reFetchData }) => {
   const [openEditModal, setOpenEditModal] = useState(false);
   const [openAddModal, setOpenAddModal] = useState(false);
   const [ischacked, setIschacked] = useState(false);
@@ -11,7 +12,7 @@ export const AdminRestaurantTable = ({ data, deleteItem, reFetchData }) => {
   return (
     <section className="container px-4 mx-auto py-4 ">
       {openEditModal && (
-        <Admin_RestaurentModal
+        <AdminHotelModal
           setOpenEditModal={setOpenEditModal}
           setOpenAddModal={setOpenAddModal}
           id={editItemId}
@@ -21,7 +22,7 @@ export const AdminRestaurantTable = ({ data, deleteItem, reFetchData }) => {
       )}
 
       {openAddModal && (
-        <Admin_RestaurentModal
+        <AdminHotelModal
           setOpenEditModal={setOpenEditModal}
           setOpenAddModal={setOpenAddModal}
           id={editItemId}
@@ -33,10 +34,10 @@ export const AdminRestaurantTable = ({ data, deleteItem, reFetchData }) => {
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-lg font-medium text-gray-800 dark:text-white">
-            Food List
+            Hotel Room List
           </h2>
           <p className="mt-1 text-sm text-gray-500 dark:text-gray-300">
-            "This is a list of all foods. You can add new food, edit or delete
+            "This is a list of all rooms. You can add new room, edit or delete
             existing ones."
           </p>
         </div>
@@ -60,7 +61,7 @@ export const AdminRestaurantTable = ({ data, deleteItem, reFetchData }) => {
                       scope="col"
                       className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                     >
-                      <span>Food</span>
+                      <span>Room</span>
                     </th>
 
                     <th

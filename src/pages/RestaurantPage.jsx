@@ -14,11 +14,36 @@ import { TodaySpacialCard } from "../components/TodaySpacialCard";
 
 import { CusineCard } from "../components/CusineCard";
 
+import axios from "axios";
+
+const cusine = [
+  {
+    name: "Mexican",
+    photoUrl: "./assets/cusine 1.png",
+  },
+  {
+    name: "Indian",
+    photoUrl: "./assets/cusine 2.png",
+  },
+  {
+    name: "Japanese",
+    photoUrl: "./assets/cusine 3.png",
+  },
+  {
+    name: "American",
+    photoUrl: "./assets/cusine 4.png",
+  },
+  {
+    name: "Italian",
+    photoUrl: "./assets/cusine 5.png",
+  },
+];
+
 export const RestaurantPage = () => {
   const [foodHour, setFoodHour] = useState("breakfast");
   const [todaySpacialData, setTodaySpacialData] = useState([]);
   const [guestChoiceData, setGuestChoiceData] = useState([]);
-  const [cusineData, setCusineData] = useState([]);
+  const cusineData = cusine;
 
   const images = document.getElementsByClassName("image");
 
@@ -52,18 +77,33 @@ export const RestaurantPage = () => {
     }
   };
 
-  useEffect(() => {
-    fetch("./dummyData.json")
-      .then((res) => res.json())
-      .then(
-        (data) => (
-          setTodaySpacialData(data.restaurent.todaySpacial),
-          setGuestChoiceData(data.restaurent.guestChoice[foodHour]),
-          setCusineData(data.restaurent.cusine)
-        )
+  const fetchData = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:8800/restaurant/getfood/${foodHour}`
       );
+      setGuestChoiceData(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-    return () => {};
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `http://localhost:8800/restaurant/gettodayfoods`
+        );
+        setTodaySpacialData(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchData();
+  });
+
+  useEffect(() => {
+    fetchData();
   }, [foodHour]);
 
   return (
@@ -158,8 +198,8 @@ export const RestaurantPage = () => {
               return (
                 <TodaySpacialCard
                   key={index}
-                  bgImage={data.photoUrl}
-                  foodName={data.dishName}
+                  bgImage={data.imageUrl}
+                  foodName={data.foodname}
                 />
               );
             })}
@@ -203,8 +243,8 @@ export const RestaurantPage = () => {
             {guestChoiceData.map((data, index) => (
               <TodaySpacialCard
                 key={index}
-                bgImage={data.photoUrl}
-                foodName={data.dishName}
+                bgImage={data.imageUrl}
+                foodName={data.foodname}
               />
             ))}
           </div>
